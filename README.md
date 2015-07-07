@@ -1,4 +1,6 @@
 # open-falcon-plugins
-Some plugins for open-falcon
-hello world
+network flux plugin for open-falcon
+                         --By laughing
+	input: 网络输入带宽
+    output:网络输出带宽	
 
