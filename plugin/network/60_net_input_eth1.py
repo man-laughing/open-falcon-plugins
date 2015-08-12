@@ -16,3 +16,5 @@ timee=int(time.time())
 aaa = [ {'endpoint':hostt,'tags':'','timestamp':timee,'metric':'net.flux_input.eth1','value':input_flux,'counterType':'GAUGE','step':60} ]
 bbb = json.dumps(aaa)
 print bbb
+r.close()
+rr.close()
