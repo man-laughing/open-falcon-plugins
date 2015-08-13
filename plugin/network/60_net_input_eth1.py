@@ -9,7 +9,7 @@ r_int=int(r.read())
 time.sleep(1)
 rr=open('/sys/class/net/eth1/statistics/rx_bytes','r')
 rr_int=int(rr.read())
-input_flux =  (rr_int - r_int)  * 8 / 1024 / 1024
+input_flux =  (rr_int - r_int)  * 8
 
 hostt=os.getenv('HOSTNAME')
 timee=int(time.time())

@@ -9,7 +9,7 @@ r_int=int(r.read())
 time.sleep(1)
 rr=open('/sys/class/net/bond0/statistics/tx_bytes','r')
 rr_int=int(rr.read())
-output_flux =  (rr_int - r_int)  * 8 / 1024 / 1024
+output_flux =  (rr_int - r_int)  * 8
 
 hostt=os.getenv('HOSTNAME')
 timee=int(time.time())
