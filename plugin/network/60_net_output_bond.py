@@ -4,11 +4,13 @@ import os
 import time
 import json
 
-r=open('/sys/class/net/bond0/statistics/tx_bytes','r')
-r_int=int(r.read())
+#r=open('/sys/class/net/bond0/statistics/tx_bytes','r')
+with open('/sys/class/net/bond0/statistics/tx_bytes','r') as r:
+    r_int=int(r.read())
 time.sleep(1)
-rr=open('/sys/class/net/bond0/statistics/tx_bytes','r')
-rr_int=int(rr.read())
+#rr=open('/sys/class/net/bond0/statistics/tx_bytes','r')
+with open('/sys/class/net/bond0/statistics/tx_bytes','r') as rr:
+    rr_int=int(rr.read())
 output_flux =  (rr_int - r_int)  * 8
 
 hostt=os.getenv('HOSTNAME')
@@ -16,5 +18,3 @@ timee=int(time.time())
 aaa = [{'endpoint':hostt,'tags':'','timestamp':timee,'metric':'net.flux_output.bond0','value':output_flux,'counterType':'GAUGE','step':60}]
 bbb = json.dumps(aaa)
 print bbb
-r.close()
-rr.close()
