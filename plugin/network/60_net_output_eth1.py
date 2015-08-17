@@ -10,7 +10,7 @@ with open('/sys/class/net/eth1/statistics/tx_bytes','r') as r:
 time.sleep(1)
 #rr=open('/sys/class/net/eth1/statistics/tx_bytes','r')
 with open('/sys/class/net/eth1/statistics/tx_bytes','r') as rr:
-rr_int=int(rr.read())
+    rr_int=int(rr.read())
 output_flux =  (rr_int - r_int)  * 8
 
 hostt=os.getenv('HOSTNAME')
